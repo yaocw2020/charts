@@ -5,10 +5,12 @@ on:
     branches:
       - master
       - release*
+      - test
   push:
     branches:
       - master
       - release*
+      - test
 
 jobs:
   lint-test:
@@ -61,7 +63,7 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/heads/release')
+    if: startsWith(github.ref, 'refs/heads/test')
     needs: lint-test
     steps:
       - name: Checkout
