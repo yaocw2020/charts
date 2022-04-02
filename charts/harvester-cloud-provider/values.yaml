@@ -69,3 +69,11 @@ global:
   cattle:
     systemDefaultRegistry: ""
     clusterName: ""
+
+kube-vip:
+  enabled: true
+  image:
+    repository: ghcr.io/kube-vip/kube-vip
+    tag: v0.4.3
+  nodeSelector:
+    node-role.kubernetes.io/control-plane: "true"
