@@ -46,18 +46,17 @@ spec:
             type: object
           spec:
             properties:
-              backendServers:
-                description: The LB for Harvester is different from common lb because all listeners have the same backend servers.
-                items:
+              backendServerSelector:
+                additionalProperties:
                   type: string
-                type: array
+                type: object
               description:
                 type: string
               healthCheck:
                 properties:
-                  PeriodSeconds:
-                    type: integer
                   failureThreshold:
+                    type: integer
+                  periodSeconds:
                     type: integer
                   port:
                     type: integer
@@ -65,13 +64,9 @@ spec:
                     type: integer
                   timeoutSeconds:
                     type: integer
-                required:
-                - PeriodSeconds
-                - failureThreshold
-                - port
-                - successThreshold
-                - timeoutSeconds
                 type: object
+              ipPool:
+                type: string
               ipam:
                 enum:
                 - pool
@@ -92,7 +87,7 @@ spec:
                       default: TCP
                       type: string
                   required:
-                  - name
+                  - backendPort
                   - port
                   - protocol
                   type: object
@@ -102,8 +97,6 @@ spec:
                 - vm
                 - cluster
                 type: string
-            required:
-            - ipam
             type: object
           status:
             properties:

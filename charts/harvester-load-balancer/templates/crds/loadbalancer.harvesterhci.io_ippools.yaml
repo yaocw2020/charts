@@ -61,7 +61,7 @@ spec:
               network:
                 properties:
                   vlan:
-                    type: integer
+                    type: string
                 type: object
               projects:
                 items:
