@@ -12,6 +12,31 @@ entries:
       catalog.cattle.io/ui-component: harvester-cloud-provider
       catalog.cattle.io/upstream-version: 0.1.8
     apiVersion: v2
+    appVersion: v0.1.3
+    created: "2022-04-24T02:55:45.42359179Z"
+    description: A Helm chart for Harvester Cloud Provider
+    digest: 8a44475d24a97e0b6a6873cd7be8a5b3ddaf73d7fddad522720715be611a5833
+    keywords:
+    - infrastructure
+    - harvester
+    maintainers:
+    - name: harvester
+    name: harvester-cloud-provider
+    type: application
+    urls:
+    - https://github.com/yaocw2020/charts/releases/download/harvester-cloud-provider-0.1.12/harvester-cloud-provider-0.1.12.tgz
+    version: 0.1.12
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Harvester Cloud Provider
+      catalog.cattle.io/kube-version: '>= 1.18'
+      catalog.cattle.io/namespace: kube-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/rancher-version: '>= 2.6.1-0 <= 2.6.99-0'
+      catalog.cattle.io/release-name: harvester-cloud-provider
+      catalog.cattle.io/ui-component: harvester-cloud-provider
+      catalog.cattle.io/upstream-version: 0.1.8
+    apiVersion: v2
     appVersion: v0.1.1
     created: "2021-12-21T07:04:56.538029759Z"
     description: A Helm chart for Harvester Cloud Provider
@@ -136,6 +161,31 @@ entries:
     - https://github.com/harvester/charts/releases/download/harvester-cloud-provider-0.1.1/harvester-cloud-provider-0.1.1.tgz
     version: 0.1.1
   harvester-csi-driver:
+  - annotations:
+      catalog.cattle.io/certified: rancher
+      catalog.cattle.io/display-name: Harvester CSI Driver
+      catalog.cattle.io/kube-version: '>= 1.18'
+      catalog.cattle.io/namespace: kube-system
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/rancher-version: '>= 2.6.1-0 <= 2.6.99-0'
+      catalog.cattle.io/release-name: harvester-csi-driver
+      catalog.cattle.io/ui-component: harvester-csi-driver
+      catalog.cattle.io/upstream-version: 0.1.9
+    apiVersion: v2
+    appVersion: v0.1.3
+    created: "2022-04-24T02:55:45.595073725Z"
+    description: A Helm chart for Harvester CSI driver
+    digest: e808c559399e0627a37e5ecd6d3cbec12dade70951f04a43d3176af0acbda597
+    keywords:
+    - infrastructure
+    - harvester
+    maintainers:
+    - name: harvester
+    name: harvester-csi-driver
+    type: application
+    urls:
+    - https://github.com/yaocw2020/charts/releases/download/harvester-csi-driver-0.1.11/harvester-csi-driver-0.1.11.tgz
+    version: 0.1.11
   - annotations:
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/display-name: Harvester CSI Driver
@@ -296,6 +346,21 @@ entries:
     version: 0.1.0
   harvester-load-balancer:
   - apiVersion: v2
+    appVersion: v0.1.2
+    created: "2022-04-24T02:55:45.776990461Z"
+    description: A load balancer implementation for Harvester
+    digest: 13ee71b2792c9397b761c252c20b6a05e7e0a166aedd1059228f53542c9b5239
+    home: https://github.com/harvester/harvester-load-balancer
+    maintainers:
+    - name: harvester
+    name: harvester-load-balancer
+    sources:
+    - https://github.com/harvester/harvester-load-balancer
+    type: application
+    urls:
+    - https://github.com/yaocw2020/charts/releases/download/harvester-load-balancer-0.1.3/harvester-load-balancer-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
     appVersion: v0.1.1
     created: "2021-12-21T07:04:56.806069658Z"
     description: A load balancer implementation for Harvester
@@ -326,6 +391,18 @@ entries:
     - https://github.com/harvester/charts/releases/download/harvester-load-balancer-0.1.1/harvester-load-balancer-0.1.1.tgz
     version: 0.1.1
   harvester-network-controller:
+  - apiVersion: v2
+    appVersion: v0.2.7
+    created: "2022-04-24T02:55:45.947829144Z"
+    description: A Helm chart for Harvester Network Controller
+    digest: 7b3b18c781fd5ee5df0b30a35242b7151b0a579fb66a3e46571ce5ca976c6174
+    maintainers:
+    - name: harvester
+    name: harvester-network-controller
+    type: application
+    urls:
+    - https://github.com/yaocw2020/charts/releases/download/harvester-network-controller-0.2.9/harvester-network-controller-0.2.9.tgz
+    version: 0.2.9
   - apiVersion: v2
     appVersion: v0.2.5
     created: "2021-12-21T07:04:56.938775248Z"
@@ -412,6 +489,18 @@ entries:
     version: 0.1.0
   harvester-node-disk-manager:
   - apiVersion: v2
+    appVersion: v0.4.1
+    created: "2022-04-24T02:55:46.123701696Z"
+    description: A Helm chart for Harvester Node Disk Manager
+    digest: c6dc08b14f3ca4ec304c646e2a9a5940eeb1679f74642b65d9a9d5eaf09ceac0
+    maintainers:
+    - name: harvester
+    name: harvester-node-disk-manager
+    type: application
+    urls:
+    - https://github.com/yaocw2020/charts/releases/download/harvester-node-disk-manager-0.4.2/harvester-node-disk-manager-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v2
     appVersion: v0.4.0
     created: "2021-12-21T07:04:57.085742381Z"
     description: A Helm chart for Harvester Node Disk Manager
@@ -483,4 +572,4 @@ entries:
     urls:
     - https://github.com/harvester/charts/releases/download/harvester-node-disk-manager-0.1.0/harvester-node-disk-manager-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-21T07:04:57.085851386Z"
+generated: "2022-04-24T02:55:46.123842718Z"
