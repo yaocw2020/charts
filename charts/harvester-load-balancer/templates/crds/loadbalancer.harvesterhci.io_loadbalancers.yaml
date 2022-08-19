@@ -31,6 +31,9 @@ spec:
     - jsonPath: .status.address
       name: ADDRESS
       type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:
