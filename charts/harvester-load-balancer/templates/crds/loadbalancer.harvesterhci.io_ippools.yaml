@@ -28,6 +28,9 @@ spec:
     - jsonPath: .spec.selector.priority
       name: Priority
       type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:
