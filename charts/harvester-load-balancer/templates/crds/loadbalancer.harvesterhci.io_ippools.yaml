@@ -31,7 +31,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: AGE
       type: date
-    name: v1alpha1
+    name: v1beta1
     schema:
       openAPIV3Schema:
         properties:
@@ -53,7 +53,7 @@ spec:
                 type: string
               ranges:
                 items:
-                  description: Refer to github.com/containernetworking/plugins/plugins/ipam/host-local/backend/allocator.Range
+                  description: Range refers to github.com/containernetworking/plugins/plugins/ipam/host-local/backend/allocator.Range
                   properties:
                     gateway:
                       type: string
@@ -72,6 +72,7 @@ spec:
                   network:
                     type: string
                   priority:
+                    format: int32
                     type: integer
                   scope:
                     items:

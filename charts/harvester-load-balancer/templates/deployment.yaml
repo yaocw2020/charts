@@ -4,17 +4,17 @@ kind: Deployment
 metadata:
   namespace: {{ .Release.Namespace }}
   labels:
-  {{- include "harvester-load-balancer.labels" . | nindent 4 }}
+    {{- include "harvester-load-balancer.labels" . | nindent 4 }}
   name: {{ include "harvester-load-balancer.name" . }}
 spec:
   replicas: {{ .Values.replicaCount}}
   selector:
     matchLabels:
-    {{- include "harvester-load-balancer.selectorLabels" . | nindent 6 }}
+      {{- include "harvester-load-balancer.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-      {{- include "harvester-load-balancer.selectorLabels" . | nindent 8 }}
+        {{- include "harvester-load-balancer.selectorLabels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "harvester-load-balancer.name" . }}
       containers:
@@ -24,24 +24,24 @@ spec:
           command:
             - harvester-load-balancer
           resources:
-          {{- toYaml .Values.resources | nindent 12 }}
+            {{- toYaml .Values.resources | nindent 12 }}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: {{ .Release.Namespace }}
   labels:
-  {{- include "harvester-load-balancer-webhook.labels" . | nindent 4 }}
+    {{- include "harvester-load-balancer-webhook.labels" . | nindent 4 }}
   name: {{ include "harvester-load-balancer.name" . }}-webhook
 spec:
   replicas: {{ .Values.webhook.replicasCount }}
   selector:
     matchLabels:
-    {{- include "harvester-load-balancer-webhook.selectorLabels" . | nindent 6 }}
+      {{- include "harvester-load-balancer-webhook.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-      {{- include "harvester-load-balancer-webhook.selectorLabels" . | nindent 8 }}
+        {{- include "harvester-load-balancer-webhook.selectorLabels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "harvester-load-balancer.name" . }}-webhook
       containers:
