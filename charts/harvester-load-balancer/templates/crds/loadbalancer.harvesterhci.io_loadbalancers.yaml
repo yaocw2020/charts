@@ -22,6 +22,129 @@ spec:
     - jsonPath: .spec.description
       name: DESCRIPTION
       type: string
+    - jsonPath: .spec.ipam
+      name: IPAM
+      type: string
+    - jsonPath: .status.address
+      name: ADDRESS
+      type: string
+    deprecated: true
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              backendServers:
+                description: The LB for Harvester is different from common lb because
+                  all listeners have the same backend servers.
+                items:
+                  type: string
+                type: array
+              description:
+                type: string
+              healthCheck:
+                properties:
+                  PeriodSeconds:
+                    description: 'TODO: The first letter is uppercase, which is inconsistent
+                      with the k8s API.'
+                    type: integer
+                  failureThreshold:
+                    type: integer
+                  port:
+                    type: integer
+                  successThreshold:
+                    type: integer
+                  timeoutSeconds:
+                    type: integer
+                required:
+                - PeriodSeconds
+                - failureThreshold
+                - port
+                - successThreshold
+                - timeoutSeconds
+                type: object
+              ipam:
+                enum:
+                - pool
+                - dhcp
+                type: string
+              listeners:
+                items:
+                  properties:
+                    backendPort:
+                      format: int32
+                      type: integer
+                    name:
+                      type: string
+                    port:
+                      format: int32
+                      type: integer
+                    protocol:
+                      default: TCP
+                      type: string
+                  required:
+                  - name
+                  - port
+                  - protocol
+                  type: object
+                type: array
+            required:
+            - ipam
+            type: object
+          status:
+            properties:
+              address:
+                type: string
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      type: string
+                    lastUpdateTime:
+                      description: The last time this condition was updated.
+                      type: string
+                    message:
+                      description: Human-readable message indicating details about
+                        last transition
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of the condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+            type: object
+        type: object
+    served: true
+    storage: false
+    subresources: {}
+  - additionalPrinterColumns:
+    - jsonPath: .spec.description
+      name: DESCRIPTION
+      type: string
     - jsonPath: .spec.workloadType
       name: WORKLOADTYPE
       type: string
@@ -34,7 +157,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: AGE
       type: date
-    name: v1alpha1
+    name: v1beta1
     schema:
       openAPIV3Schema:
         properties:
@@ -54,7 +177,9 @@ spec:
             properties:
               backendServerSelector:
                 additionalProperties:
-                  type: string
+                  items:
+                    type: string
+                  type: array
                 type: object
               description:
                 type: string
@@ -119,6 +244,10 @@ spec:
                   mask:
                     type: string
                 type: object
+              backendServers:
+                items:
+                  type: string
+                type: array
               conditions:
                 items:
                   properties:
