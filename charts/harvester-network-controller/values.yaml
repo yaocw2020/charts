@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 image:
-  repository: rancher/harvester-network-controller
+  repository: armarny/harvester-network-controller
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "master-head"
+  tag: dev
 
 nameOverride: ""
 
@@ -58,13 +58,13 @@ manager:
 
 helper:
   image:
-    repository: rancher/harvester-network-helper
-    tag: "master-head"
+    repository: armarny/harvester-network-helper
+    tag: dev
 
 webhook:
   replicas: 2
   image:
-    repository: rancher/harvester-network-webhook
-    tag: "master-head"
+    repository: armarny/harvester-network-webhook
+    tag: dev
     pullPolicy: Always
   httpsPort: 8443
