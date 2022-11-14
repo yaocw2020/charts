@@ -427,6 +427,21 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: v0.1.1
+    created: "2022-11-14T08:31:58.681674365Z"
+    description: A load balancer implementation for Harvester
+    digest: 318fd8e0052af047e8448716b3c06d600ed50ece314afe56a764e199f561baca
+    home: https://github.com/harvester/harvester-load-balancer
+    maintainers:
+    - name: harvester
+    name: harvester-load-balancer
+    sources:
+    - https://github.com/harvester/harvester-load-balancer
+    type: application
+    urls:
+    - https://github.com/yaocw2020/charts/releases/download/harvester-load-balancer-0.1.2-dev/harvester-load-balancer-0.1.2-dev.tgz
+    version: 0.1.2-dev
+  - apiVersion: v2
+    appVersion: v0.1.1
     created: "2021-09-01T05:47:29.407936527Z"
     description: A load balancer implementation for Harvester
     digest: b420bd97b696dd60b0bb2d54de4e90561ac1e27a220ce1547fb445396c897ae9
@@ -661,4 +676,4 @@ entries:
     urls:
     - https://github.com/yaocw2020/charts/releases/download/harvester-node-disk-manager-0.0.0-dev/harvester-node-disk-manager-0.0.0-dev.tgz
     version: 0.0.0-dev
-generated: "2022-08-29T05:09:18.525024322Z"
+generated: "2022-11-14T08:31:58.681978266Z"
