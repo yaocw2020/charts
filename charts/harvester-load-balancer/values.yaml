@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: rancher/harvester-load-balancer
+  repository: armarny/harvester-load-balancer
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "master-head"
+  tag: dev
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -42,9 +42,9 @@ resources: {}
 webhook:
   replicasCount: 1
   image:
-    repository: rancher/harvester-load-balancer-webhook
+    repository: armarny/harvester-load-balancer-webhook
     pullPolicy: Always
-    tag: "master-head"
+    tag: dev
   securityContext:
     capabilities:
       add:

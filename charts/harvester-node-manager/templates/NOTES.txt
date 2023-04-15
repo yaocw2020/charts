@@ -1,1 +1,0 @@
-The harvester-node-manager has been installed into "{{ .Release.Namespace }}" namespace.
